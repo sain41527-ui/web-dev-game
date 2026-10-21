@@ -11,7 +11,16 @@ require_once __DIR__ . '/includes/navbar.php';
 <main class="main-content">
     <!-- Hero Banner -->
     <section class="hero-banner">
-       
+        <div class="hero-text">
+            <h2>Sain hacker,s world</h2>
+            <p>Conquer HTML5, CSS3, JavaScript, and PHP through interactive coding mini-games, visual puzzles, and arcade challenges!</p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn btn-primary hero-cta-btn" data-target="flexbox">🚀 Play Flex Hero</button>
+                <button class="btn btn-secondary hero-cta-btn" data-target="bug-hunter">🐛 sain Hunter</button>
+                <button class="btn btn-secondary hero-cta-btn" data-target="dom-invaders">⚡ farhan Invaders</button>
+                <button class="btn btn-secondary hero-cta-btn" data-target="php-detective">🐘 PHP Detective</button>
+            </div>
+        </div>
         <div class="hero-stats">
             <div class="hero-stat-badge">
                 <span class="hero-stat-num">20+</span>
