@@ -12,7 +12,7 @@ require_once __DIR__ . '/includes/navbar.php';
     <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-text">
-            <h2>Sain hackers world</h2>
+            <h2>Sain hacker,s world</h2>
             <p>Conquer HTML5, CSS3, JavaScript, and PHP through interactive coding mini-games, visual puzzles, and arcade challenges!</p>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                 <button class="btn btn-primary hero-cta-btn" data-target="flexbox">🚀 Play Flex Hero</button>
