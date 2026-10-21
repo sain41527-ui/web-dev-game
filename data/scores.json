@@ -1,0 +1,42 @@
+[
+  {
+    "player": "AdaLovelace",
+    "score": 4850,
+    "xp": 5200,
+    "level": "Web Architect",
+    "avatar": "⚡",
+    "date": "2026-10-15"
+  },
+  {
+    "player": "ByteWizard",
+    "score": 3920,
+    "xp": 4100,
+    "level": "Full-Stack Guru",
+    "avatar": "🧙‍♂️",
+    "date": "2026-10-17"
+  },
+  {
+    "player": "CSSNinja",
+    "score": 3240,
+    "xp": 3500,
+    "level": "Flexbox Master",
+    "avatar": "🥷",
+    "date": "2026-10-18"
+  },
+  {
+    "player": "PhpPhoenix",
+    "score": 2800,
+    "xp": 3000,
+    "level": "Backend Detective",
+    "avatar": "🔥",
+    "date": "2026-10-19"
+  },
+  {
+    "player": "DevRookie",
+    "score": 1250,
+    "xp": 1400,
+    "level": "Junior Dev",
+    "avatar": "🚀",
+    "date": "2026-10-20"
+  }
+]

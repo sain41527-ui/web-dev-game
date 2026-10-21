@@ -1,0 +1,213 @@
+/* ==========================================================================
+   WebDev Odyssey - Flexbox & Grid Hero CSS
+   Space Station / Docking Bay Interactive Simulation
+   ========================================================================== */
+
+.flex-simulator-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+    overflow: hidden;
+    display: flex;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Background grid stars */
+.flex-simulator-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        radial-gradient(rgba(6, 182, 212, 0.2) 1px, transparent 1px);
+    background-size: 32px 32px, 64px 64px;
+    background-position: 0 0, 16px 16px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Overlay Target Bay (The Landing Pads) */
+.docking-targets-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    pointer-events: none;
+    display: flex; /* Dynamic flex rules injected via JS for targets */
+    z-index: 1;
+}
+
+.dock-target {
+    width: 70px;
+    height: 70px;
+    border: 2px dashed rgba(245, 158, 11, 0.6);
+    background: rgba(245, 158, 11, 0.08);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+    animation: targetPulse 2s infinite ease-in-out;
+}
+
+.dock-target span {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--color-amber);
+    margin-top: 2px;
+}
+
+@keyframes targetPulse {
+    0%, 100% { border-color: rgba(245, 158, 11, 0.4); transform: scale(1); }
+    50% { border-color: rgba(245, 158, 11, 0.85); transform: scale(1.03); }
+}
+
+/* Controllable Fleet Stage */
+.docking-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    display: flex; /* controlled by user CSS */
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* The Player Space Shuttles */
+.space-shuttle {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(59, 130, 246, 0.25));
+    border: 1px solid var(--color-cyan);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+    cursor: grab;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+    user-select: none;
+    position: relative;
+}
+
+.space-shuttle.docked {
+    border-color: var(--color-emerald);
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.3));
+    box-shadow: 0 0 25px rgba(16, 185, 129, 0.6);
+}
+
+.space-shuttle .shuttle-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.space-shuttle .shuttle-id {
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+    color: var(--color-cyan);
+    margin-top: 2px;
+}
+
+/* Flexbox Controls & Quick Buttons */
+.css-rule-builder {
+    background: #090c13;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.property-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+}
+
+.property-group:last-child {
+    margin-bottom: 0;
+}
+
+.property-label {
+    font-size: 0.82rem;
+    color: var(--color-cyan);
+    font-family: var(--font-mono);
+    display: flex;
+    justify-content: space-between;
+}
+
+.property-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.prop-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.prop-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-primary);
+}
+
+.prop-btn.active {
+    background: var(--color-cyan);
+    color: #000;
+    font-weight: 700;
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+/* Success Burst Animation */
+.success-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: rgba(16, 185, 129, 0.95);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.5);
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-banner.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.success-banner h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.success-banner p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
