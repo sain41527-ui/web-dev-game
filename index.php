@@ -16,8 +16,8 @@ require_once __DIR__ . '/includes/navbar.php';
             <p>Conquer HTML5, CSS3, JavaScript, and PHP through interactive coding mini-games, visual puzzles, and arcade challenges!</p>
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                 <button class="btn btn-primary hero-cta-btn" data-target="flexbox">🚀 Play Flex Hero</button>
-                <button class="btn btn-secondary hero-cta-btn" data-target="bug-hunter">🐛 Bug Hunter</button>
-                <button class="btn btn-secondary hero-cta-btn" data-target="dom-invaders">⚡ DOM Invaders</button>
+                <button class="btn btn-secondary hero-cta-btn" data-target="bug-hunter">🐛 sain Hunter</button>
+                <button class="btn btn-secondary hero-cta-btn" data-target="dom-invaders">⚡ farhan Invaders</button>
                 <button class="btn btn-secondary hero-cta-btn" data-target="php-detective">🐘 PHP Detective</button>
             </div>
         </div>
